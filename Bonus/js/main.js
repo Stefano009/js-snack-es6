@@ -116,7 +116,8 @@ let bikes = [
 // Stampare a schermo la bici con peso minore utilizzando destructuring e template literal
 
 const button = document.getElementById('lighterBike');
-button.addEventListener( "click", () => {
+button.addEventListener( "click", () => { // BONUS: inserire una arrow function che preso in input l'array di bici ritorni l'oggetto con bici più leggera
+
     let {name,  weight} = bikes[0];
     let tmp = bikes[0];
     for (let i = 0; i < bikes.length; i++){
@@ -135,7 +136,6 @@ return console.log(`la bici che pesa meno è ${name}
 
 
 
-// BONUS: inserire una arrow function che preso in input l'array di bici ritorni l'oggetto con bici più leggera
 
 //Snack2
 // Creare un array di oggetti di squadre di calcio. Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.
