@@ -90,38 +90,81 @@
 // console.log(totalWeight)
 // esercizi della mattina
 /*  */
+
+
 // Snack 1
 // Creare un array di oggetti:
 // Ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e peso.
-// Stampare a schermo la bici con peso minore utilizzando destructuring e template literal
+// let bikes = [ 
+//     {
+//         name : 'rossa',
+//         weight : 12
+//     },
+//     {
+//         name : 'viola',
+//         weight : 20
+//     },
+//     {
+//         name : 'verde',
+//         weight : 8
+//     },
+//     {
+//         name : 'blu',
+//         weight : 16
+//     }
+// ]
+// // Stampare a schermo la bici con peso minore utilizzando destructuring e template literal
+// let {name,  weight} = bikes[0];
+// console.log(name + ' ' + weight);
+// let tmp = bikes[0];
+// for (let i = 0; i < bikes.length; i++){
+//     if (bikes[i].weight < tmp.weight){
+//     tmp = bikes[i];
+//     name = bikes[i].name;
+//     weight = bikes[i].weight;
+//     }
+// }
+
+// console.log(`la bici che pesa meno è ${name}
+// e il suo peso è di ${weight}kg`);
+
+
 // BONUS: inserire una arrow function che preso in input l'array di bici ritorni l'oggetto con bici più leggera
-let bikes = [ 
-    {
-        name : 'rossa',
-        weight : 12
-    },
-    {
-        name : 'viola',
-        weight : 20
-    },
-    {
-        name : 'verde',
-        weight : 8
-    },
-    {
-        name : 'blu',
-        weight : 16
-    }
+
+//Snack2
+// Creare un array di oggetti di squadre di calcio. Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.
+// Nome sarà l’unica proprietà da compilare, le altre saranno tutte settate a 0.
+let teams = [
+    { teamName : 'Inter', points : 0, foulsTaken : 0},
+    { teamName : 'Juventus', points : 0, foulsTaken : 0},
+    { teamName : 'Milan', points : 0, foulsTaken : 0},
+    { teamName : 'Napoli', points : 0, foulsTaken : 0},
+    { teamName : 'Reggina', points : 0, foulsTaken : 0},
+    { teamName : 'Empoli', points : 0, foulsTaken : 0},
+    { teamName : 'Sampdoria', points : 0, foulsTaken : 0},
+    { teamName : 'Sassuolo', points : 0, foulsTaken : 0},
+    { teamName : 'Genoa', points : 0, foulsTaken : 0}
 ]
-let {name,  weight} = bikes[0];
-console.log(name + ' ' + weight);
-let tmp = bikes[0];
-for (let i = 0; i < bikes.length; i++){
-    if (bikes[i].weight < tmp.weight){
-    tmp = bikes[i];
-    name = bikes[i].name;
-    weight = bikes[i].weight;
+let {teamName, points, foulsTaken} = teams[0];
+let finalRanking = []
+// Generare numeri random al posto degli 0 nelle proprietà:
+// Punti fatti e falli subiti.
+for (let i = 0; i < teams.length; i++) {
+    // Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
+    teamName = teams[i].teamName
+    points = rndGenerator()
+    foulsTaken = rndGenerator()
+    tmp = {
+        teamName,
+        points,
+        foulsTaken
     }
+    finalRanking.push(tmp)
 }
-console.log(`la bici che pesa meno è ${name}
-e il suo peso è di ${weight}kg`);
+console.log(finalRanking)
+
+
+//funzione di generazione di numeri random
+function rndGenerator() {
+    return Math.floor(Math.random() * (90 - 30) + 30);
+}
