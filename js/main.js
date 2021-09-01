@@ -191,11 +191,8 @@ const numberArray = (array, a , b) => {
     return filteredArray;
 }
 console.log(numberArray(myArray, a, b));
-
 // Usiamo i nuovi metodi degli array foreach o filter.
-
 function rndFunction(array) {
     return Math.floor(Math.random()* array)
 } 
-console.log(a, b)
-
+// console.log(a, b)
