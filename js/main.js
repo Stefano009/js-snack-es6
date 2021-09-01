@@ -91,7 +91,7 @@
 // esercizi della mattina
 /*  */
 
-
+/* ************************************************************************* */
 // Snack 1
 // Creare un array di oggetti:
 // Ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e peso.
@@ -130,41 +130,72 @@
 
 
 // BONUS: inserire una arrow function che preso in input l'array di bici ritorni l'oggetto con bici più leggera
-
+/* ************************************************************************* */
 //Snack2
 // Creare un array di oggetti di squadre di calcio. Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.
 // Nome sarà l’unica proprietà da compilare, le altre saranno tutte settate a 0.
-let teams = [
-    { teamName : 'Inter', points : 0, foulsTaken : 0},
-    { teamName : 'Juventus', points : 0, foulsTaken : 0},
-    { teamName : 'Milan', points : 0, foulsTaken : 0},
-    { teamName : 'Napoli', points : 0, foulsTaken : 0},
-    { teamName : 'Reggina', points : 0, foulsTaken : 0},
-    { teamName : 'Empoli', points : 0, foulsTaken : 0},
-    { teamName : 'Sampdoria', points : 0, foulsTaken : 0},
-    { teamName : 'Sassuolo', points : 0, foulsTaken : 0},
-    { teamName : 'Genoa', points : 0, foulsTaken : 0}
-]
-let {teamName, points, foulsTaken} = teams[0];
-let finalRanking = []
-// Generare numeri random al posto degli 0 nelle proprietà:
-// Punti fatti e falli subiti.
-for (let i = 0; i < teams.length; i++) {
-    // Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
-    teamName = teams[i].teamName
-    points = rndGenerator()
-    foulsTaken = rndGenerator()
-    tmp = {
-        teamName,
-        points,
-        foulsTaken
-    }
-    finalRanking.push(tmp)
-    console.log(finalRanking[i].teamName + ' ' + finalRanking[i].foulsTaken);
-}
+// let teams = [
+//     { teamName : 'Inter', points : 0, foulsTaken : 0},
+//     { teamName : 'Juventus', points : 0, foulsTaken : 0},
+//     { teamName : 'Milan', points : 0, foulsTaken : 0},
+//     { teamName : 'Napoli', points : 0, foulsTaken : 0},
+//     { teamName : 'Reggina', points : 0, foulsTaken : 0},
+//     { teamName : 'Empoli', points : 0, foulsTaken : 0},
+//     { teamName : 'Sampdoria', points : 0, foulsTaken : 0},
+//     { teamName : 'Sassuolo', points : 0, foulsTaken : 0},
+//     { teamName : 'Genoa', points : 0, foulsTaken : 0}
+// ]
+// let {teamName, points, foulsTaken} = teams[0];
+// let finalRanking = []
+// // Generare numeri random al posto degli 0 nelle proprietà:
+// // Punti fatti e falli subiti.
+// for (let i = 0; i < teams.length; i++) {
+//     // Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
+//     teamName = teams[i].teamName
+//     points = rndGenerator()
+//     foulsTaken = rndGenerator()
+//     tmp = {
+//         teamName,
+//         points,
+//         foulsTaken
+//     }
+//     finalRanking.push(tmp)
+//     console.log(finalRanking[i].teamName + ' ' + finalRanking[i].foulsTaken);
+// }
 
 
-//funzione di generazione di numeri random
-function rndGenerator() {
-    return Math.floor(Math.random() * (90 - 30) + 30);
+// //funzione di generazione di numeri random
+// function rndGenerator() {
+//     return Math.floor(Math.random() * (90 - 30) + 30);
+// }
+/* ************************************************************************* */
+// Snack 3
+// Scrivere una funzione che accetti tre argomenti, un array e due numeri (a più piccolo di b).
+const myArray = [1,2,3,4,5,6,7,8,9,10];
+console.log(myArray);
+let a;
+let b;
+do {
+    a = rndFunction(myArray.length);
+    b = rndFunction(myArray.length);
+} while ( a >= b);
+const numberArray = (array, a , b) => {
+// La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa tra i due numeri.
+    const filteredArray = array.filter((element, index) => {
+        if (index < a+1 || index > b-1)//posizione tra a e b esclusi. se volessimo includerli questa  è la condizione if (index < a || index > b)
+            return false;
+        else
+            return true;
+    });
+    // console.log(filteredArray)
+    return filteredArray;
 }
+console.log(numberArray(myArray, a, b));
+
+// Usiamo i nuovi metodi degli array foreach o filter.
+
+function rndFunction(array) {
+    return Math.floor(Math.random()* array)
+} 
+console.log(a, b)
+
