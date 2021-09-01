@@ -129,7 +129,7 @@ button.addEventListener( "click", () => { // BONUS: inserire una arrow function 
         }
 }
 return console.log(`la bici che pesa meno è ${name}
-    e il suo peso è di ${weight}kg`);
+    e il suo peso è di ${weight}kg`);//ricordare di non ritornare mai un console log, solitamente una cosa del genere non ha senso perchè, è preferibile ritornare una variabile che poi vai a stampare con console log. in questo caso funziona ma logicamente sbagliato
 }
 );
 

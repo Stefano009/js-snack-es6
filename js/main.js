@@ -160,8 +160,8 @@ for (let i = 0; i < teams.length; i++) {
         foulsTaken
     }
     finalRanking.push(tmp)
+    console.log(finalRanking[i].teamName + ' ' + finalRanking[i].foulsTaken);
 }
-console.log(finalRanking)
 
 
 //funzione di generazione di numeri random
